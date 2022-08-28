@@ -27,7 +27,14 @@ pipeline {
 
     stage('Deploy') {
       steps {
+        input(message: 'are you sure to deploy', ok: 'yes ,im sure')
         echo 'deploy completed'
+      }
+    }
+
+    stage('Notify for new build') {
+      steps {
+        echo 'New build completed successfully'
       }
     }
 
